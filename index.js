@@ -5,16 +5,21 @@ const __dirname = path.resolve()
 const PORT = 3000
 const app = express()
 
+app.use(express.static(path.resolve(__dirname, 'static')))
+
+
 app.get('/game', (req, res) =>{
     res.sendFile(path.resolve(__dirname, 'src', 'index.html'))
 })
 
 app.get('/', (req, res) =>{
-    res.send(('<h1>Hello Express</h1>'))
+    res.sendFile(path.resolve(__dirname, 'static', 'autorization.html'))
 })
 
-app.use(express.static(__dirname + '/src')) 
+// app.get('/registration', (req, res) =>{
+//     res.sendFile(path.resolve(__dirname, 'static', 'registration.html'))
+// })
 
 app.listen(PORT, () => {
-    console.log("Privet, ", __dirname)
+    console.log("Server has been started on port 3000, ", __dirname)
 })
