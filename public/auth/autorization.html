@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>autorization</title>
+        <link href="auth/autorization.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="flex-container">
+            <div class="card">
+                <h1 class="log-in">Вход в аккаунт</h1>
+                <form  method="post">
+                    <input type="login" class="place" placeholder="Логин" aria-label="Пароль">
+                    <br>
+                    <input type="password" class="place" placeholder="Пароль" aria-label="Пароль">
+                    <br>
+                    <form  method="get">
+                        <input value="Войти" type="button" onclick="location.href='/game'" />
+                    </form>
+                    <br>
+                    <form  method="get">
+                        <input value="Регистрация" type="button" onclick="location.href='/registration'" />
+                    </form>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
