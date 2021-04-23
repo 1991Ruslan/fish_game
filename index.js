@@ -1,10 +1,13 @@
 import express from 'express'
 import path from 'path'
+//import userRouter from 'routes/user.routes'
 
+//const userRouter = require('./routes/user.routes')
 const __dirname = path.resolve()
 const PORT = 3000
 const app = express()
 
+//app.use('/api', userRouter)
 
 app.use(express.static(path.resolve(__dirname, 'public')))
 
