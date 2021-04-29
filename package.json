@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "serve": "nodemon index.js",
+    "serve": "nodemon -r esm index.js",
     "start": "node index.js"
   },
   "author": "",
@@ -15,6 +14,7 @@
     "pg": "^8.6.0"
   },
   "devDependencies": {
+    "esm": "^3.2.25",
     "nodemon": "^2.0.7"
   }
 }
