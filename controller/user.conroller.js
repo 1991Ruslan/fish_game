@@ -2,8 +2,8 @@ const db = require('../db')
 
 class UserController {
     async createUser(req, res) {
-        const {name, login, password, password_repeat} = req.body
-        const newPerson = await db.query(`INSERT INTO users (name, login, password, password_repeat) values ($1, $2, $3, $4) RETURNING *`, [name, login, password, password_repeat])
+        const {name, login, password} = req.body
+        const newPerson = await db.query(`INSERT INTO users (name, login, password) values ($1, $2, $3) RETURNING *`, [name, login, password,])
         
         res.json(newUser)
 
