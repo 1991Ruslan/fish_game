@@ -65,7 +65,7 @@ CREATE TABLE users(ID INT PRIMARY KEY, LOGIN TEXT, PASSWORD TEXT);
 ```
 войти в БД под пользователем
 ```console
-psql -U gus fish_game
+psql -U gus -h 127.0.0.1 -d fish_game
 ```
 шаблон создания записи в таблицу
 ```console
