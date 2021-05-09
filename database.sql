@@ -14,6 +14,6 @@ CREATE TABLE users(
     password VARCHAR(255),
     name VARCHAR(255),
     status VARCHAR(255) DEFAULT 'active',
-    score INT DEFAULT '0'
+    score INT DEFAULT 0
 );
 

@@ -24,7 +24,7 @@ class UserController {
     }
 
     async getUsers(req, res) {
-        const users = await db.query('SELECT * FROM users')
+        const users = await db.query("SELECT * FROM users WHERE status = 'active'")
         res.json(users.rows)
     }
     
@@ -37,20 +37,14 @@ class UserController {
     async updateUser(req, res) {
         const {id, name, login, password} = req.body
         const user = await db.query(
-            'UPDATE users set name = $1, login = $2, password = $3 where id = $4 RETURNING *', [name, login, password, id]
+            'UPDATE users SET name = $1, login = $2, password = $3 WHERE id = $4 RETURNING *', [name, login, password, id]
         )
         res.json(user.rows)
     }
     
-    // async deleteUser(req, res) {
-    //     const id = req.params.id
-    //     const user = await db.query('DELETE FROM users where id = $1', [id])
-    //     res.json(user.rows)
-    // }
-    
-    async statusUser(req, res) {
-        const id = req.params.id
-        const user = await db.query('UPDATE users set status = delete, where id = $1', [id])
+    async deleteUser(req, res) {
+        const id = req.body.id
+        const user = await db.query("UPDATE users SET status = 'delete' WHERE id = $1", [id])
         res.json(user.rows)
     }
 }

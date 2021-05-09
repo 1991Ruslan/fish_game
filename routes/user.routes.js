@@ -5,10 +5,10 @@ const userConroller = require('../controller/user.conroller')
 
 
 router.post('/user', userConroller.createUser)
-router.get('/user', userConroller.getUsers)
+router.get('/users', userConroller.getUsers)
 router.get('/user/:id', userConroller.getUser)
-router.put('/user', userConroller.updateUser)
-router.delete('/user/:id', userConroller.deleteUser)
+router.post('/user/update', userConroller.updateUser)
+router.post('/user/delete', userConroller.deleteUser)
 
 
 
